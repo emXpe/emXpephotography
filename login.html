@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	
+    <link rel="stylesheet" href="style2.css">
+    <title>Login</title>
+</head>
+<body>
+    <section class="side">
+        <img src="./images/me.png">
+    </section>
+
+    <section class="main">
+        <div class="login-container">
+            <img src="./images/log.png">
+            <p class="title">Mart R. Peña</p>
+            <div class="seperator"></div>
+            <p class="welcome-message">INTEGRATIVE PROGRAMMING <br> BSIT 2-1</p>
+
+            <form class="login-form">
+                <div class="form-control">
+                    <input type="text" placeholder="Username" name="uname">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <div class="form-control">
+                    <input type="password" placeholder="Password" name="password" id="password">
+					<i class="fas fa-lock"></i>
+					
+                </div>
+				
+                <button class="submit">Login</button>
+            </form>
+        </div>
+        <div class="loader-container hidden">
+            <div class="loader"></div>
+            <div class="loader"></div>
+            <div class="loader"></div>
+            <p class="load"><b>Loading...</b></p>
+        </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const loginForm = document.querySelector(".login-form");
+            const loaderContainer = document.querySelector(".loader-container");
+
+            loginForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                loaderContainer.classList.remove("hidden");
+                // Simulate a delay for demonstration purposes
+                setTimeout(function() {
+                    loginForm.submit();
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
